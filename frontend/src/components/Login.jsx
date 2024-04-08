@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
-function RegistrationForm() {
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [name_1, setName_1] = useState('');
@@ -63,4 +63,4 @@ function RegistrationForm() {
     );
 }
 
-export default RegistrationForm;
+export default Login;
