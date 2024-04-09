@@ -1,5 +1,14 @@
 .App {
   text-align: center;
+  background-color: #302e2b;
+  height: 100vh;
+  color: #cecece;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -7,10 +16,26 @@
   pointer-events: none;
 }
 
+.FormReg {
+  display: flex;
+  justify-content: center;
+}
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 440px;
+  padding: 20px;
+  background-color: #51504d;
+  border-radius: 6px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 400px;
 }
 
 .App-header {

@@ -26,16 +26,18 @@ function Login() {
     };
 
     return (
-        <div>
-            <h2>Registration Form</h2>
-            <form onSubmit={handleSubmit}>
-                <MyInput type="text" name="Логин" value={username} onChange={(e) => setUsername(e.target.value)}></MyInput>
-                <MyInput name="Пароль" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></MyInput>
-                <MyInput type="text" name="Имя" value={name_1} onChange={(e) => setName_1(e.target.value)}></MyInput>
-                <MyInput type="text" name="Фамилия" value={name_2} onChange={(e) => setName_2(e.target.value)}></MyInput>
-                <MyInput type="text" name="Отчество" value={name_3} onChange={(e) => setName_3(e.target.value)}></MyInput>
-                <Mybutton>Registrate</Mybutton>
-            </form>
+        <div className="FormReg">
+            <div className="Login">
+                <h2 style={{width: "400px"}}>Registration Form</h2>
+                <form onSubmit={handleSubmit}>
+                    <MyInput type="text" name="Логин" value={username} onChange={(e) => setUsername(e.target.value)}></MyInput>
+                    <MyInput name="Пароль" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></MyInput>
+                    <MyInput type="text" name="Имя" value={name_1} onChange={(e) => setName_1(e.target.value)}></MyInput>
+                    <MyInput type="text" name="Фамилия" value={name_2} onChange={(e) => setName_2(e.target.value)}></MyInput>
+                    <MyInput type="text" name="Отчество" value={name_3} onChange={(e) => setName_3(e.target.value)}></MyInput>
+                    <Mybutton>Registrate</Mybutton>
+                </form>
+            </div>
         </div>
     );
 }
