@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import Mybutton from "./UI/button/Mybutton";
+import MyInput from "./UI/input/MyInput";
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -27,37 +29,12 @@ function Login() {
         <div>
             <h2>Registration Form</h2>
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Имя пользователя"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Пароль"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Имя"
-                    value={name_1}
-                    onChange={(e) => setName_1(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Фамилия"
-                    value={name_2}
-                    onChange={(e) => setName_2(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Отчество"
-                    value={name_3}
-                    onChange={(e) => setName_3(e.target.value)}
-                />
-                <button type="submit">Register</button>
+                <MyInput type="text" name="Логин" value={username} onChange={(e) => setUsername(e.target.value)}></MyInput>
+                <MyInput name="Пароль" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></MyInput>
+                <MyInput type="text" name="Имя" value={name_1} onChange={(e) => setName_1(e.target.value)}></MyInput>
+                <MyInput type="text" name="Фамилия" value={name_2} onChange={(e) => setName_2(e.target.value)}></MyInput>
+                <MyInput type="text" name="Отчество" value={name_3} onChange={(e) => setName_3(e.target.value)}></MyInput>
+                <Mybutton>Registrate</Mybutton>
             </form>
         </div>
     );
