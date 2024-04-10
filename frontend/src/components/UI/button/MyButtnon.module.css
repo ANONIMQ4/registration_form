@@ -1,8 +1,11 @@
 .Btn {
     padding: 5px 10px;
     margin: 10px 0 0 0;
-    border: 1px solid forestgreen;
-    font-size: 14px;
+    border: 1px solid #404040;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    background: transparent;
+    background: orange;
+    color: #cecece;
 }

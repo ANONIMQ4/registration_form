@@ -1,23 +1,30 @@
 .Input {
     padding: 0;
-    border: 1px solid forestgreen;
+    border: 1px solid #404040;
     border-radius: 5px;
     font-size: 14px;
-    background: transparent;
+    background: #272727;
     width: 400px;
     height: 30px;
     margin: 3px 0 0 0;
+    color: #cecece;
 }
 
 .DivInp {
-    padding: 0;
-    margin: 15px 0 0 0;
+    margin: 0 0 0 0;
     width: 400px;
+    padding: 0 0 20px 0;
 }
 
 .NameDiv {
     width: 100px;
     text-align: left;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 5px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.BodyDiv {
+
 }

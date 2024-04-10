@@ -16,19 +16,21 @@ function App() {
                 console.error('Error fetching users:', error);
             }
         }
+
         fetchUsers();
     }, []);
-  return (
-      <div className="App">
-          <Login/>
-          <h1>User List</h1>
-          <ul>
-              {users.map(user => (
-                  <li key={user.id}>{user.username}</li>
-              ))}
-          </ul>
-      </div>
-  );
+    return (
+        <div className="App">
+            <Login/>
+        </div>
+    );
 }
 
 export default App;
+
+
+/*<ul>
+    {users.map(user => (
+        <li key={user.id}>{user.username}</li>
+    ))}
+</ul>*/
