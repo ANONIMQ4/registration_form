@@ -23,7 +23,9 @@ class User(db.Model):
 
 @app.route('/register', methods=['POST'])
 def register():
+
     data = request.json
+    id = data.get('id')
     username = data.get('username')
     password = data.get('password')
     name_1 = data.get('name_1')
@@ -39,6 +41,7 @@ def register():
     db.session.commit()
 
     response = {'message': 'Registration successful', 'username': username}
+
     return jsonify(response)
 
 

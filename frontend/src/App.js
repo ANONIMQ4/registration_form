@@ -1,27 +1,15 @@
 import React, {useEffect, useState} from 'react';
-
 import './App.css';
-import Login from "./components/Login"
+import Reg from "./pages/Reg"
 import axios from "axios";
+import cors from "cors";
 
 function App() {
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        async function fetchUsers() {
-            try {
-                const response = await axios.get('http://localhost:5000/users');
-                setUsers(response.data);
-            } catch (error) {
-                console.error('Error fetching users:', error);
-            }
-        }
 
-        fetchUsers();
-    }, []);
     return (
         <div className="App">
-            <Login/>
+            <Reg/>
         </div>
     );
 }

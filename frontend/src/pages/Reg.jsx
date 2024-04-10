@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-import Mybutton from "./UI/button/Mybutton";
-import MyInput from "./UI/input/MyInput";
+import Mybutton from "../components/UI/button/Mybutton";
+import MyInput from "../components/UI/input/MyInput";
 
-function Login() {
+function Reg() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [name_1, setName_1] = useState('');
     const [name_2, setName_2] = useState('');
     const [name_3, setName_3] = useState('');
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        async function fetchUsers() {
+            try {
+                const response = await axios.get('http://localhost:5000/users');
+                setUsers(response.data);
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        }
+
+        fetchUsers();
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -42,4 +58,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Reg;
