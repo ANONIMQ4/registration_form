@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Mybutton from "../components/UI/button/Mybutton";
 import MyInput from "../components/UI/input/MyInput";
-
 function Reg() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -28,7 +27,7 @@ function Reg() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/register', {
+            const response = await axios.get('http://localhost:5000/register',{
                 username: username,
                 password: password,
                 name_1: name_1,

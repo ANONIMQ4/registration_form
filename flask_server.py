@@ -21,7 +21,7 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['GET'])
 def register():
 
     data = request.json

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Reg from "./pages/Reg"
 import axios from "axios";
-import cors from "cors";
+
 
 function App() {
 
