@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify 
 from flask_cors import cross_origin, CORS
 from flask_sqlalchemy import SQLAlchemy
 
@@ -6,6 +6,7 @@ app = Flask(__name__)
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['CORS_HEADERS'] = 'Content-Type'
 db = SQLAlchemy(app)
 
 
@@ -21,7 +22,7 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['GET'])
 def register():
 
     data = request.json
@@ -32,7 +33,7 @@ def register():
     name_2 = data.get('name_2')
     name_3 = data.get('name_3')
 
-    existing_user = User.query.filter_by(username=username).first()
+    existing_user = User.query.filter_by(username=username)
     if existing_user:
         return jsonify({'error': 'User already exists'}), 400
 
