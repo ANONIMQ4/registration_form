@@ -32,7 +32,7 @@ def register():
     name_2 = data.get('name_2')
     name_3 = data.get('name_3')
 
-    existing_user = User.query.filter_by(username=username).first()
+    existing_user = User.query.filter_by(username=username)
     if existing_user:
         return jsonify({'error': 'User already exists'}), 400
 
