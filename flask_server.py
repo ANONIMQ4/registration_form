@@ -15,14 +15,14 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
-    name_1 = db.Column(db.String(80), unique=True, nullable=False)
-    name_2 = db.Column(db.String(80), unique=True, nullable=False)
-    name_3 = db.Column(db.String(80), unique=True, nullable=False)
+    name_1 = db.Column(db.String(80), unique=False, nullable=False)
+    name_2 = db.Column(db.String(80), unique=False, nullable=False)
+    name_3 = db.Column(db.String(80), unique=False, nullable=True)
     def repr(self):
         return '<User %r>' % self.username
 
 
-@app.route('/register', methods=['GET'])
+@app.route('/register', methods=['POST'])
 def register():
 
     data = request.json
